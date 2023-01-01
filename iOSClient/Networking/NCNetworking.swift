@@ -1103,7 +1103,9 @@ import Photos
 
             var datesSubFolder: [String] = []
             let dateFormatter = DateFormatter()
-
+            let app_locale = Bundle.main.preferredLocalizations.first
+            dateFormatter.locale = Locale(identifier: app_locale ?? "en_US")
+            
             for asset in assets {
                 let date = asset.creationDate ?? Date()
                 dateFormatter.dateFormat = "yyyy"
